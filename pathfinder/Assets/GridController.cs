@@ -11,6 +11,7 @@ public class GridController : MonoBehaviour
     public GameObject VLine;
     public GameObject Camera;
     public int height, width;
+    public GameObject obs;
 
     void Start()
     {
@@ -26,9 +27,9 @@ public class GridController : MonoBehaviour
 
     void createGrid()
     {
-        for (float i = 0; i < width; i++)
+        for (int i = 0; i < width; i++)
         {
-            for (float j = 0; j < height; j++)
+            for (int j = 0; j < height; j++)
             {
                 GameObject tile=Instantiate(Tile, transform.position = new Vector2(i, j), Quaternion.identity);
                 tile.name = "tile" + i + "" + j;
@@ -36,5 +37,9 @@ public class GridController : MonoBehaviour
                 Instantiate(HLine, transform.position = new Vector2(i, j), Quaternion.identity);
             }
         }
+    }
+    void createObstacle()
+    {
+        
     }
 }
