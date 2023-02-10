@@ -11,7 +11,10 @@ public class GridController : MonoBehaviour
     public GameObject VLine;
     public GameObject Camera;
     public int height, width;
+    public GameObject VizTool;
     public GameObject obs;
+    GameObject source;
+    GameObject destination;
 
     void Start()
     {
@@ -37,9 +40,5 @@ public class GridController : MonoBehaviour
                 Instantiate(HLine, transform.position = new Vector2(i, j), Quaternion.identity);
             }
         }
-    }
-    void createObstacle()
-    {
-        
     }
 }
