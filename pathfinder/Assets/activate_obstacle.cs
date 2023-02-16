@@ -20,9 +20,5 @@ public class activate_obstacle : MonoBehaviour
     public void ButtonPressedSource()
     {
         source.SetActive(false);
-    }
-    void Update()
-    {
-        
-    }    
+    } 
 }

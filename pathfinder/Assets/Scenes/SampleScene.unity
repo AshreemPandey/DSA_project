@@ -399,7 +399,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Source
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -489,9 +489,9 @@ GameObject:
   - component: {fileID: 1045446287}
   - component: {fileID: 1045446286}
   - component: {fileID: 1045446290}
-  - component: {fileID: 1045446291}
   - component: {fileID: 1045446293}
   - component: {fileID: 1045446292}
+  - component: {fileID: 1045446294}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -598,21 +598,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obs: {fileID: 1373918777}
   source: {fileID: 0}
---- !u!114 &1045446291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1045446285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65d75dfbaf29ab64b84266904aa6a6ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  source: {fileID: 0}
-  destination: {fileID: 0}
-  VizTool: {fileID: 1632923924}
 --- !u!114 &1045446292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,6 +624,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 1058716807}
+--- !u!114 &1045446294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045446285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65d75dfbaf29ab64b84266904aa6a6ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 1058716807}
+  destination: {fileID: 1908079989}
 --- !u!1 &1058716807
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,28 +647,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1058716809}
-  - component: {fileID: 1058716808}
+  - component: {fileID: 1058716810}
   m_Layer: 0
-  m_Name: player
+  m_Name: source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1058716808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1058716807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da30324b9890e9044acb1f86939142e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 3098064084792367955, guid: 42b3bc9dbb898b44d8cc2f8c4ccda6e3, type: 3}
-  Self: {fileID: 1058716807}
 --- !u!4 &1058716809
 Transform:
   m_ObjectHideFlags: 0
@@ -685,6 +670,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1058716810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058716807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da30324b9890e9044acb1f86939142e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 3098064084792367955, guid: 42b3bc9dbb898b44d8cc2f8c4ccda6e3, type: 3}
+  Self: {fileID: 1058716807}
 --- !u!1 &1148136581
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,7 +697,7 @@ GameObject:
   - component: {fileID: 1148136584}
   - component: {fileID: 1148136583}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1203,9 +1202,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1632923925}
-        m_TargetAssemblyTypeName: Visualizer, Assembly-CSharp
-        m_MethodName: visualizePath
+      - m_Target: {fileID: 1045446294}
+        m_TargetAssemblyTypeName: visualizer, Assembly-CSharp
+        m_MethodName: visualize
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1401,7 +1400,7 @@ GameObject:
   - component: {fileID: 1586701734}
   - component: {fileID: 1586701733}
   m_Layer: 5
-  m_Name: Player
+  m_Name: Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1531,7 +1530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1632923926}
-  - component: {fileID: 1632923925}
+  - component: {fileID: 1632923927}
   m_Layer: 0
   m_Name: Visualize
   m_TagString: Untagged
@@ -1539,21 +1538,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1632923925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1632923924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65d75dfbaf29ab64b84266904aa6a6ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  source: {fileID: 0}
-  destination: {fileID: 0}
-  VizTool: {fileID: 1345411304851248231, guid: 7e0856aa567a5a846b5121f3d63b2363, type: 3}
 --- !u!4 &1632923926
 Transform:
   m_ObjectHideFlags: 0
@@ -1569,6 +1553,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1632923927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632923924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65d75dfbaf29ab64b84266904aa6a6ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: {fileID: 1058716807}
+  destination: {fileID: 0}
 --- !u!1 &1908079989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,7 +1576,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1908079991}
-  - component: {fileID: 1908079990}
+  - component: {fileID: 1908079992}
   m_Layer: 0
   m_Name: destination
   m_TagString: Untagged
@@ -1586,20 +1584,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1908079990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1908079989}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da30324b9890e9044acb1f86939142e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 7851186309298692961, guid: 74d40c8cc8dae9948a674b25325de635, type: 3}
-  Self: {fileID: 1908079989}
 --- !u!4 &1908079991
 Transform:
   m_ObjectHideFlags: 0
@@ -1615,6 +1599,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1908079992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908079989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f488db94f7c0e1458a136216bc1a30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destination: {fileID: 8115272436066250907, guid: 74d40c8cc8dae9948a674b25325de635, type: 3}
+  Self: {fileID: 1908079989}
 --- !u!1 &1925468923
 GameObject:
   m_ObjectHideFlags: 0
@@ -1673,7 +1671,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Destination
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -36,9 +36,11 @@ public class GridController : MonoBehaviour
             {
                 GameObject tile=Instantiate(Tile, transform.position = new Vector2(i, j), Quaternion.identity);
                 tile.name = "tile" + i + "" + j;
-                Instantiate(VLine, transform.position = new Vector2(i, j), Quaternion.identity);
-                Instantiate(HLine, transform.position = new Vector2(i, j), Quaternion.identity);
+                Instantiate(VLine, transform.position = new Vector2(i-0.5f, j-0.5f), Quaternion.identity);
+                Instantiate(HLine, transform.position = new Vector2(i-0.5f, j-0.5f), Quaternion.identity);
+                Debug.Log(tile.name);
             }
         }
+        
     }
 }
